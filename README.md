@@ -23,7 +23,7 @@ formatted analysis text for CI and build usage.
 ## Install
 
 ```sh
-$ npm install --global rollup-analyzer-config
+$ npm install --save-dev rollup-analyzer-config
 ```
 
 ## Usage
