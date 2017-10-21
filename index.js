@@ -4,6 +4,8 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var analyze = _interopDefault(require('rollup-analyzer-plugin'));
 
+'use strict';
+
 var module$1 = {plugins: [analyze()]};
 
 module.exports = module$1;

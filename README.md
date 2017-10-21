@@ -33,7 +33,7 @@ rollup -c node:rollup-analyzer-config -f cjs -o index.js module.js
 ```
 
 ## Results
-Something like this will be logged to console on bundle completion
+Something like this will be logged to stderr on bundle completion
 ```sh
 -----------------------------
 Rollup File Analysis
