@@ -1,4 +1,4 @@
 'use strict'
 
-import analyze from 'rollup-analyzer-plugin'
+import { plugin as analyze } from 'rollup-plugin-analyzer'
 export default {plugins: [analyze()]}

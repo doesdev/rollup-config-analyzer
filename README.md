@@ -1,35 +1,34 @@
-# rollup-analyzer-config [![NPM version](https://badge.fury.io/js/rollup-analyzer-config.svg)](https://npmjs.org/package/rollup-analyzer-config)   [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)   [![Dependency Status](https://dependencyci.com/github/doesdev/rollup-analyzer-config/badge)](https://dependencyci.com/github/doesdev/rollup-analyzer-config)
+# rollup-config-analyzer [![NPM version](https://badge.fury.io/js/rollup-config-analyzer.svg)](https://npmjs.org/package/rollup-config-analyzer)   [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)   [![Dependency Status](https://dependencyci.com/github/doesdev/rollup-config-analyzer/badge)](https://dependencyci.com/github/doesdev/rollup-config-analyzer)   
 
-> Analyze file sizes of rollup bundled imports
+> Mad metrics for your rollup bundles, know all the things
 
-## rollup-analyzer
+## rollup-config-analyzer
 
-Rollup Analyzer gives you a quick look at what's taking up space in your bundle.
+See what's bloating your bundle, how treeshaking has treated you, and other
+great stuff. Perfect for console printing an analysis of your bundle or
+integrating in your CI workflows.
 
-### Comes in three scrumptious flavors:
+### Comes in two scrumptious flavors:
 
-#### [rollup-analyzer-plugin](https://github.com/doesdev/rollup-analyzer-plugin)
-Adding as a plugin to your rollup config or build script will print a well
-formatted analysis to the console upon bundling.
+#### [rollup-plugin-analyzer](https://github.com/doesdev/rollup-plugin-analyzer)
+Adding as a plugin to your rollup config or build script will allow you to
+print a well formatted analysis to the console upon bundling or get a full
+analysis object for CI purposes.
 
-#### [rollup-analyzer-config](https://github.com/doesdev/rollup-analyzer-config)
-If using Rollup's CLI to bundle with no additonal config, pass
-`-c node:rollup-analyzer-config` to print a well formatted analysis to your console.
-
-#### [rollup-analyzer](https://github.com/doesdev/rollup-analyzer)
-Full analysis module, giving you access to the complete analysis object or well
-formatted analysis text for CI and build usage.
+#### [rollup-config-analyzer](https://github.com/doesdev/rollup-config-analyzer)
+If using Rollup's CLI to bundle with no additional config, pass
+`-c node:rollup-config-analyzer` to print a well formatted analysis to your console.
 
 ## Install
 
 ```sh
-$ npm install --save-dev rollup-analyzer-config
+$ npm install --save-dev rollup-config-analyzer
 ```
 
 ## Usage
 
 ```sh
-rollup -c node:rollup-analyzer-config -f cjs -o index.js module.js
+rollup -c node:rollup-config-analyzer -f cjs -o index.js module.js
 ```
 
 ## Results
@@ -38,19 +37,32 @@ Something like this will be logged to stderr on bundle completion
 -----------------------------
 Rollup File Analysis
 -----------------------------
-bundle size: 1.146 MB
+bundle size:    2.809 KB
+original size:  11.384 KB
+code reduction: 75.33 %
 -----------------------------
-file: \node_modules\html5-history-api\history.js
-size: 38.502 KB
-percent: 3.36%
-dependents: 1
-  - \app\modules\page.js
+file:            \test\fixtures\import-d.js
+bundle space:    90.64 %
+rendered size:   2.546 KB
+original size:   2.57 KB
+code reduction:  0.93 %
+dependents:      1
+  - \test\fixtures\import-c.js
 -----------------------------
-file: \node_modules\pikaday\pikaday.js
-size: 34.683 KB
-percent: 3.03%
-dependents: 1
-  - \app\helpers\transformer.js
+file:            \test\fixtures\bundle.js
+bundle space:    4.27 %
+rendered size:   120 Bytes
+original size:   267 Bytes
+code reduction:  55.06 %
+dependents:      0
+-----------------------------
+file:            \test\fixtures\import-c.js
+bundle space:    2.95 %
+rendered size:   83 Bytes
+original size:   161 Bytes
+code reduction:  48.45 %
+dependents:      1
+  - \test\fixtures\import-b.js
 ...
 ```
 

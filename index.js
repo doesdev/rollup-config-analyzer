@@ -1,11 +1,7 @@
 'use strict';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+var rollupPluginAnalyzer = require('rollup-plugin-analyzer');
 
-var analyze = _interopDefault(require('rollup-analyzer-plugin'));
-
-'use strict';
-
-var module$1 = {plugins: [analyze()]};
+var module$1 = {plugins: [rollupPluginAnalyzer.plugin()]};
 
 module.exports = module$1;
