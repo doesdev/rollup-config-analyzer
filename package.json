@@ -1,6 +1,6 @@
 {
   "name": "rollup-config-analyzer",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Analyze file sizes of rollup bundled imports",
   "files": [
     "index.js",
@@ -32,10 +32,10 @@
   },
   "homepage": "https://github.com/doesdev/rollup-config-analyzer#readme",
   "devDependencies": {
-    "husky": "^0.14.3",
-    "rollup": "^0.60.1"
+    "husky": "^3.0.0",
+    "rollup": "^1.16.6"
   },
   "dependencies": {
-    "rollup-plugin-analyzer": "~2.0.1"
+    "rollup-plugin-analyzer": "~3.1.0"
   }
 }
